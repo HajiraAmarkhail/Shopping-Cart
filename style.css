@@ -1,0 +1,313 @@
+/* ====== General Reset ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+}
+
+/* ====== Body Styling ====== */
+body {
+    background-color: #fff0f5; /* light pink/lavender */
+    color: #333;
+    padding: 20px;
+}
+
+/* ====== Header ====== */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #ff69b4; /* hot pink */
+}
+
+/* ====== Main Layout ====== */
+main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* ====== Products Section ====== */
+#products {
+    flex: 2;
+    min-width: 400px;
+    background-color: #fffaf0; /* very light pastel */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255,182,193,0.3); /* soft pink shadow */
+}
+
+#product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* ====== Individual Product Card ====== */
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff0f5; /* pastel pink */
+    padding: 12px 15px;
+    border-radius: 15px;
+    border: 1px solid #ffc0cb;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 15px rgba(255,182,193,0.4);
+}
+
+.product img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #ffb6c1;
+}
+
+.product h3 {
+    font-size: 16px;
+    flex: 1;
+    color: #ff69b4;
+}
+
+.product p {
+    font-size: 14px;
+    color: #fc7abf; /* darker pink for price */
+}
+
+/* ====== Product Buttons ====== */
+.product button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+    box-shadow: 0 4px 6px rgba(255,105,180,0.3);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.product button:hover {
+    background-color: #ff85a2;
+    transform: scale(1.05);
+}
+
+/* ====== Cart Section ====== */
+#cart {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fed7e9; /* soft pastel pink */
+    color: #333;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255,182,193,0.3);
+}
+
+#cart h2 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+/* Cart Items */
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: #fff0f5;
+    padding: 8px 12px;
+    border-radius: 15px;
+    border: 1px solid #ffc0cb;
+}
+
+/* Cart Remove Button */
+#cart-items button {
+    background-color: #fe6bb9; /* deep pink */
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+#cart-items button:hover {
+    background-color: #ff85ba;
+    transform: scale(1.1);
+}
+
+/* Clear Cart Button */
+#clear-cart {
+    background-color: #fe83c1;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(255,105,180,0.3);
+    transition: transform 0.2s, background 0.2s;
+}
+
+#clear-cart:hover {
+    background-color: #ff85a2;
+    transform: scale(1.05);
+}
+
+/* Search Input */
+#search {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ffc0cb;
+    margin-bottom: 20px;
+    background-color: #fff0f5;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #cart {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+#checkout {
+    background-color: #ff85c1; /* soft pink */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(255,105,180,0.3);
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  #checkout:hover {
+    background-color: #ff5ba0;
+    transform: scale(1.05);
+  }
+  
+
+
+
+  /* ====== Modal Styling ====== */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff0f5;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(255,182,193,0.4);
+    animation: popUp 0.4s ease;
+  }
+  
+  .modal-content h2 {
+    color: #ff69b4;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .modal-content p {
+    color: #333;
+    font-size: 16px;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff69b4;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #ff1493;
+  }
+  
+  /* Animation */
+  @keyframes popUp {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+
+  /* Hearts/Sparkles Animation */
+.hearts {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; /* don’t block clicks */
+    overflow: hidden;
+  }
+  
+  .heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff69b4;
+    animation: floatUp 3s linear forwards;
+    opacity: 0.8;
+  }
+  
+  .sparkle {
+    position: absolute;
+    font-size: 18px;
+    color: #ffd700; /* gold sparkle */
+    animation: floatUp 3s linear forwards;
+    opacity: 0.8;
+  }
+  
+  /* Floating animation */
+  @keyframes floatUp {
+    from { transform: translateY(50px) scale(0.8); opacity: 1; }
+    to { transform: translateY(-200px) scale(1.2); opacity: 0; }
+  }
+
+  /* success message */
+  #success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+  }
+  

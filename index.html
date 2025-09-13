@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>🛒 Your Shopping Cart</h1>
+
+    <p id="success-message" style="display:none; color: green; text-align:center; margin:10px 0;">
+    Product added to cart!
+   </p>
+
+   <div id="image-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content:center; align-items:center; flex-direction:column;">
+    <span id="close-modal" style="position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+    <img id="modal-img" src="" style="max-width:80%; max-height:60%; margin-bottom:10px;">
+    <div>
+      <button id="prev-img" style="margin-right:10px;">&#10094; Prev</button>
+      <button id="next-img">&#10095; Next</button>
+    </div>
+  </div>
+
+    <main>
+        <section id="products">
+          <h2>Products</h2>
+          <input type="text" id="search" placeholder="Search products...">
+
+          <div id="product-list"></div>
+          
+        </section>
+    
+        <section id="cart">
+          <h2>Cart Details</h2>
+          <ul id="cart-items"></ul>
+          <p>Total: $<span id="cart-total">0</span></p>
+          <button id="clear-cart">Clear Cart</button>
+          <button id="checkout">Checkout</button> <!-- new button -->
+        </section>
+      </main>
+
+      <!-- Checkout Modal -->
+     <div id="checkout-modal" class="modal">
+     <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>🎉 Thank you! 💖</h2>
+    <p id="checkout-message">Your order has been placed successfully!</p>
+    <div class="hearts"></div> <!-- animated hearts/sparkles -->
+    </div>
+    </div>
+
+
+  <!-- JS File -->
+  <script src="script.js"></script>
+</body>
+</html>
